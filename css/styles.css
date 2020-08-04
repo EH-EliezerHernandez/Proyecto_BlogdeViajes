@@ -1,0 +1,300 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* Globales */
+
+.contenedor {
+    max-width: 120rem;
+    width: 93%;
+    margin: 0 auto;
+}
+
+.img {
+    max-width: 100%;
+}
+
+p {
+    line-height: 2;
+}
+
+
+/* Utilidades */
+
+.m-0 {
+    margin: 0;
+}
+
+.seccion {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+
+/* btn */
+
+.btn {
+    display: inline-block;
+    padding: 1rem 6rem;
+    background-color: #00b8e4;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    transition: background-color .3s ease;
+}
+
+.btn:hover {
+    background-color: hsl(192, 100%, 23%);
+}
+
+
+/* Header */
+
+.site-header {
+    padding: 2rem 0 6rem 0;
+}
+
+
+/* navegacion */
+
+.navegacion-principal {
+    background-color: #db008d;
+    overflow: hidden;
+}
+
+
+/* Menu responsive */
+
+.mobile-menu,
+.cerrar {
+    display: block;
+    color: white;
+    font-size: 3.2rem;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+@media(min-width:768px) {
+    .mobile-menu,
+    .cerrar {
+        display: none;
+    }
+}
+
+#contenedor-nav:target {
+    /* display: block;<-- otra alternativa */
+    /* max-height: unset; <-- otra alternativa*/
+    /* Las otras dos alternativas presentadas previamente tienen el problema de que no funcionan con la transicion*/
+    max-height: 80rem;
+}
+
+.contenedor-nav {
+    /* display: none;<-- otra alternativa */
+    max-height: 0;
+    transition: max-height .2s ease-in;
+}
+
+@media(min-width:768px) {
+    .contenedor-nav {
+        max-height: unset;
+    }
+}
+
+.navegacion a {
+    padding: 2rem 2rem;
+    display: block;
+    font-size: 2.2rem;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+@media(min-width:768px) {
+    .navegacion a {
+        display: inline-block;
+    }
+}
+
+@media(max-width:768px) {
+    .navegacion-principal .contenedor {
+        margin: unset;
+        max-width: initial;
+        width: initial;
+    }
+}
+
+.navegacion-principal a:hover {
+    background-color: #00B8E4;
+}
+
+
+/* contenedor-principal */
+
+.contenedor-principal {
+    padding: 2rem 0;
+}
+
+@media(min-width:768px) {
+    /* .contenedor-principal {
+        Otra alternativa (Las demas partes de esta opcion estan comentadas con los selectores .contenido-principal y .sidebar)
+        overflow: auto; <-- solucion para que el elemento contenedor no pierda la altura por sus elementos contenidos flotantes que salen del DOM.
+    } */
+    .contenedor-principal {
+        display: grid;
+        grid-template-columns: 65% 1fr;
+        column-gap: 6rem;
+    }
+}
+
+.contenido-principal,
+.sidebar {
+    margin-top: 6rem;
+}
+
+@media(min-width:768px) {
+    /* .contenido-principal {
+        float: left;
+        width: 60%;
+        Otra alternativa
+    } */
+    /* .sidebar {
+        float: right
+        Otra alternativa
+    } */
+    .contenido-principal,
+    .sidebar {
+        margin-top: 2rem;
+    }
+}
+
+
+/* contenido principal */
+
+.entrada {
+    margin-bottom: 6rem;
+}
+
+.entrada:last-of-type {
+    margin-bottom: 0;
+}
+
+.entrada:last-of-type {
+    padding-bottom: 0;
+}
+
+.entrada h2 {
+    color: #00b8e4;
+}
+
+.entrada img {
+    float: left;
+    max-width: 30rem;
+    margin-right: 3rem;
+}
+
+.entrada p {
+    text-align: justify;
+}
+
+
+/* posts */
+
+.sidebar {
+    padding-bottom: 2rem;
+}
+
+@media(min-width:768px) {}
+
+.sidebar h2 {
+    color: #00b8e4;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar a {
+    display: block;
+    color: #00b8e4;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 1rem 1rem;
+}
+
+.sidebar a:hover {
+    color: white;
+    background-color: #00b8e4;
+}
+
+
+/* footer */
+
+.site-footer {
+    margin-top: 4rem;
+}
+
+.info-footer {
+    padding: 4rem 0 5rem 0;
+    background-color: #DB008D;
+    text-align: center;
+    color: white;
+}
+
+@media(min-width:768px) {
+    .contenido-footer {
+        display: flex;
+        justify-content: space-between
+    }
+    .sobre-nosotros {
+        flex: 0 0 30%;
+        text-align: left;
+    }
+}
+
+.info-footer .navegacion a {
+    display: inline-block;
+    padding: 0;
+    margin-right: 2rem;
+}
+
+.info-footer .navegacion a:last-of-type {
+    margin-right: 0;
+}
+
+@media(min-width:768px) {
+    .menu-navegacion {
+        flex: 0 0 70%;
+        text-align: right;
+    }
+}
+
+.copy {
+    text-align: center;
+    color: white;
+    background-color: #b10474;
+    padding: 2rem 0;
+}
